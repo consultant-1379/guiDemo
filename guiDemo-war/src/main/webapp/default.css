@@ -1,0 +1,555 @@
+
+html, body {
+	height: 100%;
+}
+
+body {
+	margin: 0px;
+	padding: 0px;
+	background: #53565E url(images/bg01.jpg) repeat left top;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #5B5E67;
+}
+
+h1, h2, h3 {
+	margin-top: 0px;
+}
+
+p, ol, ul {
+	margin-top: 0px;
+}
+
+p {
+	line-height: 190%;
+}
+
+strong {
+	color: #42454D;
+}
+
+a {
+	color: #CE1D24;
+}
+
+a:hover {
+	text-decoration: none;
+}
+
+a img {
+	border: none;
+}
+
+img.border {
+}
+
+img.alignleft {
+	float: left;
+	padding-right: 25px;
+}
+
+img.alignright {
+	float: right;
+}
+
+img.aligncenter {
+	margin: 0px auto;
+}
+
+hr {
+	display: none;
+}
+
+/** WRAPPER */
+
+#wrapper {
+	overflow: hidden;
+	background: url(images/bg02.jpg) repeat-x left top;
+}
+
+.container {
+	width: 1280px;
+	margin: 0px auto;
+}
+
+.clearfix {
+	clear: both;
+}
+
+/** HEADER */
+
+#header {
+	width: 900px;
+	height: 108px;
+	margin: 0px auto;
+	padding: 0px 50px;
+	background: url(images/bg03.jpg) no-repeat left top;
+}
+
+/** LOGO */
+
+#logo {
+	float: left;
+	width: 430px;
+	height: 108px;
+}
+
+#logo h1, #logo p {
+	margin: 0px;
+	line-height: normal;
+	text-indent: -9999em;
+}
+
+#logo h1 a {
+	display: block;
+	top: 0px;
+	left: 0px;
+	width: 430px;
+	height: 108px;
+	background: url(images/homepage01.jpg) no-repeat left top;
+}
+
+/** MENU */
+
+#menu {
+	float: right;
+	width: 470px;
+	height: 40px;
+	margin: 0px;
+	padding: 70px 0px 0px 0px;
+}
+
+#menu ul {
+	margin: 0px;
+	padding: 0px 30px 0px 14px;
+	list-style: none;
+	line-height: normal;
+	text-align: center;
+}
+
+#menu li {
+	display: inline;
+	float: left;
+	padding: 0px 20px 0px 20px;
+	background: url(images/homepage02.jpg) no-repeat left 0px;
+}
+
+#menu a {
+	margin: 0px;
+	letter-spacing: -1px;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-family: Tahoma, Geneva, sans-serif, Impact;
+	font-size: 16px;
+	color: #FFFFFF;
+}
+
+#menu a:hover {
+	text-decoration: underline;
+}
+
+#menu .first {
+	background: none;
+}
+
+/** PAGE */
+
+#page {
+	width: 1200px;
+	margin: 0px auto;
+	background: url(images/bg06.jpg) repeat-y left top;
+}
+
+#page-bgtop {
+	background: url(images/bg04.jpg) no-repeat left top;
+}
+
+#page-bgbtm {
+	overflow: hidden;
+	padding: 40px 40px 0px 40px;
+	background: url(images/bg05.jpg) no-repeat left bottom;
+}
+
+.subpage #page-bgbtm {
+	width: 1100px;
+	padding: 40px 80px 30px 80px;
+}
+
+.single #page-bgbtm {
+	width: 1100px;
+	padding: 40px 80px 40px 80px;
+}
+
+/** SPLASH PAGE */
+
+#splash {
+	width: 1000px;
+	height: 141px;
+	margin: 0px auto;
+	padding: 136px 50px 70px 40px;
+	background: url(images/homepage03.png) no-repeat left bottom;
+}
+
+#splash h2, #splash p {
+	margin: 0px;
+	padding: 0px;
+	line-height: normal;
+	text-transform: lowercase;
+	font-family: Tahoma, Geneva, sans-serif, Impact;
+	font-weight: normal;
+}
+
+#splash h2 {
+	margin-top: -10px;
+	letter-spacing: -3px;
+	font-size: 44px;
+	color: #23252A;
+}
+
+#splash p {
+	letter-spacing: -1px;
+	font-size: 22px;
+	color: #575A63;
+}
+
+/** CONTENT */
+
+#content {
+	float: right;
+	width: 1080px;
+}
+
+.single #content {
+	width: 1100px;
+}
+
+/** SIDEBAR */
+
+#sidebar {
+	float: left;
+	width: 260px;
+}
+
+/** FOOTER */
+
+
+#footer-content {
+	width: 1000px;
+	margin: 0px auto;
+	background: url(images/bg09.jpg) repeat-y left top;
+}
+
+#footer-content .bgtop {
+	background: url(images/bg07.jpg) no-repeat left top;
+}
+
+#footer-content .bgbtm {
+	width: 1100px;
+	overflow: hidden;
+	padding: 30px 80px;
+	background: url(images/bg08.jpg) no-repeat left bottom;
+}
+
+#two-columns {
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #BEBFC1;
+}
+
+#two-columns h2 {
+	letter-spacing: -1px;
+	text-shadow: 1px 1px 2px #3D3F47;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+#two-columns span {
+	font-weight: bold;
+	color: #FFFFFF;
+}
+
+#two-columns strong {
+	color: #E4E4E4;
+}
+
+#two-columns a {
+	color: #F3F3F3;
+}
+
+#two-columns .separator {
+	margin-bottom: 20px;
+	background: url(images/homepage13.jpg) repeat-x left bottom;
+}
+
+#two-columns .link {
+	padding-left: 20px;
+	background: url(images/homepage14.gif) no-repeat left top;
+}
+
+#column1 {
+	float: left;
+	width: 550px;
+}
+
+#column2 {
+	float: right;
+	width: 260px;
+}
+
+#footer {
+	width: 1000px;
+	height: 177px;
+	margin: 0px auto;
+	background: url(images/bg10.jpg) no-repeat left top;
+}
+
+#footer p {
+	margin: 0px;
+	padding: 36px 0px 0px 0px;
+	text-align: center;
+	text-transform: lowercase;
+	font-size: 12px;
+	color: #6E727B;
+}
+
+#footer .legal {
+}
+
+#footer .links {
+}
+
+.box1 {
+	width: 525px;
+}
+
+.box1 .title {
+	margin: 0px;
+	padding: 0px;
+	height: 40px;
+	background: url(images/bg3_01.jpg) no-repeat left top;
+}
+
+.box1 span {
+	font-weight: bold;
+}
+
+.box2 span {
+	font-weight: bold;
+}
+
+.box3 span {
+	font-weight: bold;
+}
+
+.box1 .content {
+	background: url(images/bg3_04.jpg) repeat-y left top;
+}
+
+.box1 .content .bgtop {
+	background: url(images/bg3_02.jpg) no-repeat left top;
+}
+
+.box1 .content .bgbtm {
+	overflow: hidden;
+	padding: 5px 5px 5px 5px;
+	background: url(images/bg3_03.jpg) no-repeat left bottom;
+}
+
+.box2 {
+	width: 360px;
+}
+
+.box2 .title {
+	margin: 0px;
+	padding: 0px;
+	height: 40px;
+	background: url(images/bg3_05.jpg) no-repeat left top;
+}
+
+.box2 .content {
+	background: url(images/bg3_08.jpg) repeat-y left top;
+}
+
+.box2 .content .bgtop {
+	background: url(images/bg3_06.jpg) no-repeat left top;
+}
+
+.box2 .content .bgbtm {
+	overflow: hidden;
+	padding: 5px 5px 5px 5px;
+	background: url(images/bg3_07.jpg) no-repeat left bottom;
+}
+
+.box3 {
+	width: 525px;
+}
+
+.box3 .title {
+	margin: 0px;
+	padding: 0px;
+	background: url(images/bg3_09.jpg) no-repeat left top;
+}
+
+.box3 .content {
+	overflow: hidden;
+	background: url(images/bg3_12.gif) repeat-y left top;
+}
+
+.box3 .content .bgtop {
+	background: url(images/bg3_10.jpg) no-repeat left top;
+}
+
+.box3 .content .bgbtm {
+	overflow: hidden;
+	padding: 7px 5px 5px 5px;
+	background: url(images/bg3_11.jpg) no-repeat left bottom;
+}
+
+.box4 {
+	width: 550px;
+}
+
+.box4 .title {
+	margin: 0px;
+	padding: 0px;
+	background: url(images/subpage1_01.jpg) no-repeat left top;
+}
+
+.box4 span {
+	font-weight: bold;
+}
+
+.box4 .content {
+	overflow: hidden;
+	background: url(images/subpage1_04.jpg) repeat-y left top;
+}
+
+.box4 .content .bgtop {
+	background: url(images/subpage1_02.jpg) no-repeat left top;
+}
+
+.box4 .content .bgbtm {
+	overflow: hidden;
+	padding: 20px 20px 15px 20px;
+	background: url(images/subpage1_03.jpg) no-repeat left bottom;
+}
+
+.box5 {
+	width: 840px;
+}
+
+.box5 .title {
+	margin: 0px;
+	padding: 0px;
+	background: url(images/bg4_01.jpg) no-repeat left top;
+}
+
+.box5 span {
+	font-weight: bold;
+}
+
+.box5 .content {
+	overflow: hidden;
+	background: url(images/bg4_04.jpg) repeat-y left top;
+}
+
+.box5 .content .bgtop {
+	background: url(images/bg4_02.jpg) no-repeat left top;
+}
+
+.box5 .content .bgbtm {
+	overflow: hidden;
+	padding: 20px 20px 15px 20px;
+	background: url(images/bg4_03.jpg) no-repeat left bottom;
+}
+
+
+.box-style {
+	color: #5C5F68;
+}
+
+.box-sytle .title {
+	height: 30px;
+	padding: 10px 0px 0px 15px;
+	text-transform: lowercase;
+	text-shadow: 1px 1px 2px #710811;
+	font-family: Tahoma, Geneva, sans-serif, Impact;
+	font-size: 18px;
+	font-weight: normal;
+	color: #FFFFFF;
+}
+
+.box-style span {
+	font-weight: bold;
+}
+
+.separator {
+	margin:0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	line-height: normal;
+}
+
+.box1 .separator {
+	background: url(images/homepage07.gif) repeat-x left top;
+}
+
+.box2 .separator {
+	background: url(images/homepage08.gif) repeat-x left top;
+}
+
+.box3 .separator {
+	background: url(images/homepage09.gif) repeat-x left top;
+}
+
+.link {
+	margin: -10px 0px 5px 0px;
+	padding: 0px 0px 0px 20px;
+	line-height: normal;
+}
+
+.box1 .link {
+	background: url(images/homepage10.gif) no-repeat left 3px;
+}
+
+.box2 .link {
+	background: url(images/homepage11.gif) no-repeat left 3px;
+}
+
+.box3 .link {
+	background: url(images/homepage12.gif) no-repeat left 3px;
+}
+
+#box1 {
+	float: left;
+	width: 530px;
+	margin-right: 30px;
+}
+
+#box2 {
+	float: left;
+	width: 350px;
+}
+
+#box3 {
+	float: right;
+	width: 530px;
+}
+
+#box4 {
+	margin-bottom: 20px;
+}
+
+#three-columns {
+	overflow: hidden;
+	height: 340px;
+	padding: 30px 40px 0px 40px;
+	background: url(images/bg2_01.jpg) no-repeat center top;
+}
+
+ol.style1 {
+}
+
+ol.style1 li {
+	padding: 0px 0px 5px 0px;
+}

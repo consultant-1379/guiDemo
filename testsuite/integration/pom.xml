@@ -1,0 +1,92 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>guiDemo-testsuite</artifactId>
+		<groupId>com.ericsson.nms</groupId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>guiDemo-testsuite-integration</artifactId>
+	<packaging>pom</packaging>
+	<name>[${project.parent.artifactId}] TestSuite Integration</name>
+
+	<properties>
+		<version.arquillian.weld.embedded>1.0.0.CR3</version.arquillian.weld.embedded>
+	</properties>
+
+	<modules></modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.arquillian.junit</groupId>
+			<artifactId>arquillian-junit-container</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.weld</groupId>
+			<artifactId>weld-core</artifactId>
+			<version>${version.weld}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jboss.weld.se</groupId>
+			<artifactId>weld-se-core</artifactId>
+			<version>${version.weld}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>skip_standalone</id>
+			<activation>
+				<property>
+					<name>!ts.skip.integration.standalone</name>
+				</property>
+			</activation>
+			<modules>
+				<module>standalone</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>skip_standalone_cluster</id>
+			<activation>
+				<property>
+					<name>!ts.skip.integration.standalone-cluster</name>
+				</property>
+			</activation>
+			<modules>
+				<module>standalone-cluster</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>skip_jee</id>
+			<activation>
+				<property>
+					<name>!ts.skip.integration.jee</name>
+				</property>
+			</activation>
+			<modules>
+				<module>jee</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>skip_jee_cluster</id>
+			<activation>
+				<property>
+					<name>!ts.skip.integration.jee-cluster</name>
+				</property>
+			</activation>
+			<modules>
+				<module>jee-cluster</module>
+			</modules>
+		</profile>
+	</profiles>
+
+</project>

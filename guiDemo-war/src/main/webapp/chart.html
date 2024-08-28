@@ -1,0 +1,583 @@
+<html>
+<head>
+<link href="default.css" rel="stylesheet" type="text/css" media="all" />
+<style type="text/css">
+@import "layout.css";
+</style>
+<link type="text/css" rel="stylesheet"
+	href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css">
+<link type="text/css" rel="stylesheet" href="riksh/full/graph.css">
+<link type="text/css" rel="stylesheet" href="riksh/full/detail.css">
+<link type="text/css" rel="stylesheet" href="riksh/full/legend.css">
+<link type="text/css" rel="stylesheet" href="riksh/full/extensions.css">
+
+<script src="riksh/vendor/d3.min.js"></script>
+<script src="riksh/vendor/d3.layout.min.js"></script>
+
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+
+<script src="riksh/full/js/Rickshaw.js"></script>
+<script src="riksh/full/js/Rickshaw.Class.js"></script>
+<script src="riksh/full/js/Rickshaw.Compat.ClassList.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Renderer.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Renderer.Area.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Renderer.Line.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Renderer.Bar.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Renderer.ScatterPlot.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.RangeSlider.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.HoverDetail.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Annotate.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Legend.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Axis.Time.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Behavior.Series.Toggle.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Behavior.Series.Order.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Behavior.Series.Highlight.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Smoother.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Unstacker.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.Time.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.Number.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.RandomData.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.RandomDataSuccess.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.RandomDataNonSup.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.RandomDataFail.js"></script>
+<script src="riksh/full/js/Rickshaw.Fixtures.Color.js"></script>
+<script src="riksh/full/js/Rickshaw.Color.Palette.js"></script>
+<script src="riksh/full/js/Rickshaw.Graph.Axis.Y.js"></script>
+
+<script src="riksh/full/js/extensions.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1>
+					<a href="#">ERICSSON</a>
+				</h1>
+			</div>
+			<div id="menu">
+				<ul>
+					<li class="first"><a href="#" accesskey="1" title="">PMListener</a></li>
+					<li><a href="#" accesskey="2" title="">Architecture</a></li>
+					<li><a href="#" accesskey="3" title="">Slides</a></li>
+					<li><a href="#" accesskey="3" title="">Upgrade</a></li>
+				</ul>
+			</div>
+		</div>
+		<div id="page">
+			<div id="page-bgtop">
+				<div id="page-bgbtm2">
+					<div id="splash">
+						<p>ericsson</p>
+						<h2>scalable file collector</h2>
+					</div>
+					<div id="three-columns">
+						<div id="box1">
+							<div class="box1 box-sytle">
+								<h2 class="title">generated requests</h2>
+								<div class="content">
+									<div class="bgtop">
+										<div class="bgbtm">
+											<div id="content">
+												<form id="side_panel">
+													<section>
+														<div id="legend"></div>
+													</section>
+													<section></section>
+												</form>
+												<div id="chart_container">
+													<div id="chart"></div>
+													<div id="timeline"></div>
+													<div id="slider"></div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="box3">
+							<div class="box3 box-sytle">
+								<h2 class="title">Successfully transfered</h2>
+								<div class="content">
+									<div class="bgtop">
+										<div class="bgbtm">
+											<div id="content">
+												<form id="side_panel2">
+													<section>
+														<div id="legend2"></div>
+													</section>
+													<section></section>
+												</form>
+												<div id="chart_container">
+													<div id="chart2"></div>
+													<div id="timeline2"></div>
+													<div id="slider2"></div>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="three-columns">
+						<div id="box1">
+							<div class="box1 box-sytle">
+								<h2 class="title">Non-supported requests</h2>
+								<div class="content">
+									<div class="bgtop">
+										<div class="bgbtm">
+											<div id="content">
+												<form id="side_panel3">
+													<section>
+														<div id="legend3"></div>
+													</section>
+													<section></section>
+												</form>
+												<div id="chart_container">
+													<div id="chart3"></div>
+													<div id="timeline3"></div>
+													<div id="slider3"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div id="box3">
+							<div class="box3 box-sytle">
+								<h2 class="title">Failed requests</h2>
+								<div class="content">
+									<div class="bgtop">
+										<div class="bgbtm">
+											<div id="content">
+												<form id="side_panel4">
+													<section>
+														<div id="legend4"></div>
+													</section>
+													<section></section>
+												</form>
+												<div id="chart_container">
+													<div id="chart4"></div>
+													<div id="timeline4"></div>
+													<div id="slider4"></div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>2012 Ericsson.com</p>
+	</div>
+	
+<script>
+// GRAPH SCRIPT ### DO NOT EDIT IF YOU DONT KNOW WHAT ARE YOU DOING
+var seriesData = [[],[]];
+var random = new Rickshaw.Fixtures.RandomData(150);
+random.addData(seriesData);
+var palette = new Rickshaw.Color.Palette( { scheme: 'classic9' } );
+
+// instantiate our graph!
+
+var graph = new Rickshaw.Graph( {
+	element: document.getElementById("chart"),
+	width: 510,
+	height: 260,
+	renderer: 'area',
+	stroke: true,
+	series: [
+		{
+			color: palette.color(),
+			data: seriesData[0],
+			name: ''
+		}
+	]
+} );
+
+graph.render();
+
+var slider = new Rickshaw.Graph.RangeSlider( {
+	graph: graph,
+	element: $('#slider')
+} );
+
+var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+	graph: graph
+} );
+
+var annotator = new Rickshaw.Graph.Annotate( {
+	graph: graph,
+	element: document.getElementById('timeline')
+} );
+
+var legend = new Rickshaw.Graph.Legend( {
+	graph: graph,
+	element: document.getElementById('legend')
+
+} );
+
+var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
+	graph: graph,
+	legend: legend
+} );
+
+var order = new Rickshaw.Graph.Behavior.Series.Order( {
+	graph: graph,
+	legend: legend
+} );
+
+var highlighter = new Rickshaw.Graph.Behavior.Series.Highlight( {
+	graph: graph,
+	legend: legend
+} );
+
+var smoother = new Rickshaw.Graph.Smoother( {
+	graph: graph,
+	element: $('#smoother')
+} );
+
+var ticksTreatment = 'glow';
+
+var xAxis = new Rickshaw.Graph.Axis.Time( {
+	graph: graph,
+	ticksTreatment: ticksTreatment
+} );
+
+xAxis.render();
+
+var yAxis = new Rickshaw.Graph.Axis.Y( {
+	graph: graph,
+	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+	ticksTreatment: ticksTreatment
+} );
+
+yAxis.render();
+
+
+var controls = new RenderControls( {
+	element: document.querySelector('form'),
+	graph: graph
+} );
+
+setInterval( function() {
+	random.addData(seriesData);
+	graph.update();
+
+}, 1000 );
+//PARAMETER ABOWE SETS THE REFRESH INTERVAL
+setTimeout( function() { setInterval( addAnnotation, 6000 ) }, 6000 );
+
+</script>
+
+<script>
+// GRAPH SCRIPT FOR SUCCESS DO NOT EDIT IF YOU DONT KNOW WHAT ARE YOU DOING
+var seriesData2 = [[],[]];
+var random2 = new Rickshaw.Fixtures.RandomDataSuccess(150);
+random2.addData(seriesData2);
+var palette2 = new Rickshaw.Color.Palette( { scheme: 'classic9' } );
+
+// instantiate our graph!
+
+var graph2 = new Rickshaw.Graph( {
+	element: document.getElementById("chart2"),
+	width: 510,
+	height: 260,
+	renderer: 'area',
+	stroke: true,
+	series: [
+		{
+			color: palette.color(),
+			data: seriesData2[0],
+			name: ''
+		}
+	]
+} );
+
+graph2.render();
+
+var slider2 = new Rickshaw.Graph.RangeSlider( {
+	graph: graph2,
+	element: $('#slider2')
+} );
+
+var hoverDetail2 = new Rickshaw.Graph.HoverDetail( {
+	graph: graph2
+} );
+
+var annotator2 = new Rickshaw.Graph.Annotate( {
+	graph: graph2,
+	element: document.getElementById('timeline2')
+} );
+
+var legend2 = new Rickshaw.Graph.Legend( {
+	graph: graph2,
+	element: document.getElementById('legend2')
+
+} );
+
+var shelving2 = new Rickshaw.Graph.Behavior.Series.Toggle( {
+	graph: graph2,
+	legend: legend2
+} );
+
+var order2 = new Rickshaw.Graph.Behavior.Series.Order( {
+	graph: graph2,
+	legend: legend2
+} );
+
+var highlighter2 = new Rickshaw.Graph.Behavior.Series.Highlight( {
+	graph: graph2,
+	legend: legend2
+} );
+
+var smoother2 = new Rickshaw.Graph.Smoother( {
+	graph: graph2,
+	element: $('#smoother')
+} );
+
+var ticksTreatment2 = 'glow';
+
+var xAxis2 = new Rickshaw.Graph.Axis.Time( {
+	graph: graph2,
+	ticksTreatment: ticksTreatment2
+} );
+
+xAxis2.render();
+
+var yAxis2 = new Rickshaw.Graph.Axis.Y( {
+	graph: graph2,
+	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+	ticksTreatment: ticksTreatment2
+} );
+
+yAxis2.render();
+
+
+var controls2 = new RenderControls( {
+	element: document.querySelector('#side_panel2'),
+	graph: graph2
+} );
+
+setInterval( function() {
+	random2.addData(seriesData2);
+	graph2.update();
+
+}, 1000 );
+//PARAMETER ABOWE SETS THE REFRESH INTERVAL
+setTimeout( function() { setInterval( addAnnotation, 6000 ) }, 6000 );
+
+</script>
+
+<script>
+// GRAPH SCRIPT FOR NONSUPPORTED DO NOT EDIT IF YOU DONT KNOW WHAT ARE YOU DOING
+var seriesData3 = [[],[]];
+var random3 = new Rickshaw.Fixtures.RandomDataNonSup(150);
+random3.addData(seriesData3);
+var palette3 = new Rickshaw.Color.Palette( { scheme: 'classic9' } );
+
+// instantiate our graph!
+
+var graph3 = new Rickshaw.Graph( {
+	element: document.getElementById("chart3"),
+	width: 510,
+	height: 260,
+	renderer: 'area',
+	stroke: true,
+	series: [
+		{
+			color: palette.color(),
+			data: seriesData3[0],
+			name: ''
+		}
+	]
+} );
+
+graph3.render();
+
+var slider3 = new Rickshaw.Graph.RangeSlider( {
+	graph: graph3,
+	element: $('#slider3')
+} );
+
+var hoverDetail3 = new Rickshaw.Graph.HoverDetail( {
+	graph: graph3
+} );
+
+var annotator3 = new Rickshaw.Graph.Annotate( {
+	graph: graph3,
+	element: document.getElementById('timeline3')
+} );
+
+var legend3 = new Rickshaw.Graph.Legend( {
+	graph: graph3,
+	element: document.getElementById('legend3')
+
+} );
+
+var shelving3 = new Rickshaw.Graph.Behavior.Series.Toggle( {
+	graph: graph3,
+	legend: legend3
+} );
+
+var order3 = new Rickshaw.Graph.Behavior.Series.Order( {
+	graph: graph3,
+	legend: legend3
+} );
+
+var highlighter3 = new Rickshaw.Graph.Behavior.Series.Highlight( {
+	graph: graph3,
+	legend: legend3
+} );
+
+var smoother3 = new Rickshaw.Graph.Smoother( {
+	graph: graph3,
+	element: $('#smoother')
+} );
+
+var ticksTreatment3 = 'glow';
+
+var xAxis3 = new Rickshaw.Graph.Axis.Time( {
+	graph: graph3,
+	ticksTreatment: ticksTreatment3
+} );
+
+xAxis3.render();
+
+var yAxis3 = new Rickshaw.Graph.Axis.Y( {
+	graph: graph3,
+	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+	ticksTreatment: ticksTreatment3
+} );
+
+yAxis3.render();
+
+
+var controls3 = new RenderControls( {
+	element: document.querySelector('#side_panel3'),
+	graph: graph3
+} );
+
+setInterval( function() {
+	random3.addData(seriesData3);
+	graph3.update();
+
+}, 1000 );
+//PARAMETER ABOWE SETS THE REFRESH INTERVAL
+setTimeout( function() { setInterval( addAnnotation, 6000 ) }, 6000 );
+
+</script>
+
+<script>
+// GRAPH SCRIPT FOR FAIL DO NOT EDIT IF YOU DONT KNOW WHAT ARE YOU DOING
+var seriesData4 = [[],[]];
+var random4 = new Rickshaw.Fixtures.RandomDataFail(150);
+random4.addData(seriesData4);
+var palette4 = new Rickshaw.Color.Palette( { scheme: 'classic9' } );
+
+// instantiate our graph!
+
+var graph4 = new Rickshaw.Graph( {
+	element: document.getElementById("chart4"),
+	width: 510,
+	height: 260,
+	renderer: 'area',
+	stroke: true,
+	series: [
+		{
+			color: palette.color(),
+			data: seriesData4[0],
+			name: ''
+		}
+	]
+} );
+
+graph4.render();
+
+var slider4 = new Rickshaw.Graph.RangeSlider( {
+	graph: graph4,
+	element: $('#slider4')
+} );
+
+var hoverDetail4 = new Rickshaw.Graph.HoverDetail( {
+	graph: graph4
+} );
+
+var annotator4 = new Rickshaw.Graph.Annotate( {
+	graph: graph4,
+	element: document.getElementById('timeline4')
+} );
+
+var legend4 = new Rickshaw.Graph.Legend( {
+	graph: graph4,
+	element: document.getElementById('legend4')
+
+} );
+
+var shelving4 = new Rickshaw.Graph.Behavior.Series.Toggle( {
+	graph: graph4,
+	legend: legend4
+} );
+
+var order4 = new Rickshaw.Graph.Behavior.Series.Order( {
+	graph: graph4,
+	legend: legend4
+} );
+
+var highlighter4 = new Rickshaw.Graph.Behavior.Series.Highlight( {
+	graph: graph4,
+	legend: legend4
+} );
+
+var smoother4 = new Rickshaw.Graph.Smoother( {
+	graph: graph4,
+	element: $('#smoother')
+} );
+
+var ticksTreatment4 = 'glow';
+
+var xAxis4 = new Rickshaw.Graph.Axis.Time( {
+	graph: graph4,
+	ticksTreatment: ticksTreatment4
+} );
+
+xAxis4.render();
+
+var yAxis4 = new Rickshaw.Graph.Axis.Y( {
+	graph: graph4,
+	tickFormat: Rickshaw.Fixtures.Number.formatKMBT,
+	ticksTreatment: ticksTreatment4
+} );
+
+yAxis4.render();
+
+
+var controls4 = new RenderControls( {
+	element: document.querySelector('#side_panel4'),
+	graph: graph4
+} );
+
+setInterval( function() {
+	random4.addData(seriesData4);
+	graph4.update();
+
+}, 1000 );
+//PARAMETER ABOWE SETS THE REFRESH INTERVAL
+setTimeout( function() { setInterval( addAnnotation, 6000 ) }, 6000 );
+
+</script>
+</body>
+</html>

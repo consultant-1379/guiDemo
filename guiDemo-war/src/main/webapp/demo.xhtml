@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:h="http://java.sun.com/jsf/html">
+ 
+    <h:head>
+        <title>Demo</title>
+        <link rel="stylesheet" type="text/css" href="css/basic.css" />
+    </h:head>
+    <h:body>    	
+    	<div id="first_container">
+                <div id="second_container">
+                    <div id="third_container">            
+                        <ul id="menu">
+                            <li><a href="http://ev0010182b806f:8090/display/TORFTM/TOR+Mediation+Design+Environment">Confluence</a></li>
+                            <li><a href="https://arm1s11-eiffel004.eiffel.gic.ericsson.se:8443/nexus/index.html#view-repositories;public~browsestorage">Nexus</a></li>
+                            <li><a href="http://eselivm2v238l.lmera.ericsson.se:8080/jenkins/job/MediationCore/">Jenkins</a></li>
+                            <li><a href="http://eselivm2v238l.lmera.ericsson.se:8888/#/admin/projects/com.ericsson.nms.mediation/MediationCore">Gerrit</a></li>
+                            <li><span id="menuselected">Test</span></li>
+                        </ul>
+                        <div class="title"></div>
+                        <div class="border">
+                            <div class="content">
+                                    <h1>TOR Mediation</h1>
+                                    <div class="text">
+    										<h:form>
+    											<table>
+    											<tr>
+    												<td>File Name:</td>
+    												<td><h:inputText value="#{gUIController.fileName}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td>Source Address:</td>
+    												<td><h:inputText value="#{gUIController.sourceNodAddress}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td>Source Directory:</td>
+    												<td><h:inputText value="#{gUIController.sourceDirectory}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td>New File Name:</td>
+    												<td><h:inputText value="#{gUIController.newName}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td>Destination Address:</td>
+    												<td><h:inputText value="#{gUIController.destinationNodAddress}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td>Destination Directory:</td>
+    												<td><h:inputText value="#{gUIController.destinationDirectory}"></h:inputText></td>
+    											</tr>
+    											<tr>
+    												<td></td>
+    												<td><h:commandButton value="Transfer File" action="success" actionListener="#{gUIController.collectFiles}"></h:commandButton></td>
+    											</tr>
+    											</table>
+    										</h:form>
+                                    </div>      
+                            </div>
+                        </div>                       
+                    </div>
+                </div>
+            </div>
+    </h:body>
+</html>

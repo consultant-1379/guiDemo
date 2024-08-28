@@ -1,0 +1,66 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ericsson.nms</groupId>
+		<artifactId>guiDemo</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	<artifactId>guiDemo-testsuite</artifactId>
+	<packaging>pom</packaging>
+	<name>[${project.parent.artifactId}] TestSuite</name>
+
+	<properties>
+		
+	</properties>
+
+	<modules>
+		<!-- check profiles for modules -->
+	</modules>
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+		</dependency>
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>run_stress</id>
+			<activation>
+				<property>
+					<name>ts.stress</name>
+				</property>
+			</activation>
+			<modules>
+				<module>stress</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>run_benchmark</id>
+			<activation>
+				<property>
+					<name>ts.benchmark</name>
+				</property>
+			</activation>
+			<modules>
+				<module>benchmark</module>
+			</modules>
+		</profile>
+
+		<profile>
+			<id>skip_integration</id>
+			<activation>
+				<property>
+					<name>!ts.skip.integration</name>
+				</property>
+			</activation>
+			<modules>
+				<module>integration</module>
+			</modules>
+		</profile>
+	</profiles>
+</project>
